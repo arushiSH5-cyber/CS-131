@@ -1,0 +1,10 @@
+T1: cd ~/cs131/ws1 && pwd
+T4: ls -alhr
+T5: ls -lS logs/
+T6: ls -l logs/app02.log -> size=1048576 bytes, owner=ishigaki-cs23, modified=Jun 10 09:33
+T7: ls data/Data?.csv   (Data?.csv matches Data1.csv but not Data10.csv)
+T8: ls -d [A-Z]*   (character class [A-Z] matches names starting with an uppercase letter)
+T9: ls logs/BACKUP.[0-9][0-9][0-9]   (matches BACKUP. followed by exactly three digits)
+T10: cp -r data/ backup/ && ls backup/
+T11: mv data/readme.txt data/README.md
+T12: rm -ri backup/data   (-r recursive, -i prompt before each removal)
