@@ -1,0 +1,16 @@
+B1: grep "city":"Santa Barbara"
+B1: grep '"city":"Santa Barbara"' /data/yelp/yelp_academic_dataset_business.json
+B2: grep -c "state":"CA" - -c returns count of matching lines
+B3: grep -i worth /data/yelp/yelp_academic_dataset_review.json  (-i makes match case-insensitive, catches Worth and worth)
+B4: grep -E Coffee|Café|Cafe - -E enables extended regex, | means OR
+B5: grep -E "stars":(4\.5|5\.0) /data/yelp/yelp_academic_dataset_business.json - anchors on "stars": then alternates 4.5 or 5.0, dot escaped with \
+B6: grep -E "stars":5, - matches exactly integer 5 star field, comma after prevents matching longer numbers
+B6: grep -E "stars":5, - matches exactly "stars":5, with comma after to avoid matching longer numbers like review_count or business_id digits
+B7: grep -E \w+@[\w.]+\.[a-zA-Z]{2,} - matches word chars, @, word/dot chars, dot, then 2+ letters for email pattern
+B8: grep -E [0-9]{3}-[0-9]{3}-[0-9]{4} - {n} specifies exact digit count for NNN-NNN-NNNN format
+B9: grep -E "name":"P - anchors on the name field directly, not line start
+B10: grep -ic pizza - -i case-insensitive, -c returns count instead of lines
+B11: grep -n service - -n prints line number before each matching line
+B12: grep -v Restaurants - -v inverts match, prints lines that do NOT contain Restaurants
+B13: stage1: grep filters CA businesses | stage2: extracts review_count field | stage3: extracts just the number | sort -nr sorts numerically descending | head -3 takes top 3
+B14: grep filters Santa Barbara businesses | grep -oE extracts name field | sort sorts alphabetically
