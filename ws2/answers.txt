@@ -1,0 +1,39 @@
+Q1: git add notes.md && git commit -m "ws2: add task line"
+
+Q2: git log --oneline -3
+
+Q3: c9751c6 (ws2: bad change)
+
+Q4: git revert c9751c6 --no-edit
+
+Q5:
+git rm --cached bigdata.bin
+echo "bigdata.bin" >> .gitignore
+git add .gitignore
+git commit --amend --no-edit
+rm bigdata.bin
+git push
+
+Q6: git switch -c feature-summary
+
+Q7: git add summary.md && git commit -m "ws2: add summary"
+
+Q8: git diff main..feature-summary
+
+Q9: git switch main && git merge feature-summary
+
+Q10: git branch -d feature-summary
+
+Q11: git merge conflict-branch — conflict in ws2/summary.md
+
+Q12: git diff --name-only --diff-filter=U
+
+Q13: manually edited summary.md, removed <<<<<<< HEAD, =======, >>>>>>> conflict-branch markers
+
+Q14: git add summary.md && git commit --no-edit
+
+Q15: git fetch origin && git log HEAD..origin/main --oneline
+
+Q16: git fetch downloads remote commits without merging into your branch, whereas git pull does fetch + merge in one step.
+
+
